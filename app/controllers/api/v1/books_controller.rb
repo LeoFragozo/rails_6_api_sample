@@ -8,7 +8,7 @@ module Api
 				status: :ok
 			end
 
-			def show #está dando erro
+			def show
 				book = Book.find(params[:id])
 				render json: {status: 'SUCCESS', message:'Livros carregados', data:book},
 				status: :ok
@@ -24,7 +24,7 @@ module Api
 			end
 
 			def update
-				book = Book.find(params[:id]) #está dando erro
+				book = Book.find(params[:id])
 
 				if book.update_attributes(book_params)
 					render json: {status: 'SUCCESS', message:'Livro atualizado', data:book},
